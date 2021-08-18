@@ -1,6 +1,6 @@
-import { startup } from './flow.actions';
+import { startup } from './shared/actions';
 import { config } from 'dotenv';
 import fp from 'lodash/fp';
-import './startup.listeners';
+import './listeners';
 
 fp.pipe(config, startup)().catch(console.error);
