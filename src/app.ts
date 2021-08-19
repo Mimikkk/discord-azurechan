@@ -1,5 +1,5 @@
-import { startup } from './shared/actions';
+import { startup } from 'shared/actions';
 import 'config';
-import './listeners';
 
+console.clear();
 startup().catch(console.error);

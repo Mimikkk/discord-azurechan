@@ -13,5 +13,3 @@ i18n.init({
   defaultNS: 'main',
   interpolation: { escapeValue: false },
 });
-
-export default i18n;

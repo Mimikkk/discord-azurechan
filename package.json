@@ -7,7 +7,6 @@
     "author": "github.com/Mimikkk",
     "dependencies": {
         "@azurapi/azurapi": "^1.0.3",
-        "@typeit/discord": "^5.0.13",
         "@types/chalk": "^2.2.0",
         "@types/faker": "^5.5.8",
         "@types/jest": "^27.0.1",
@@ -23,21 +22,19 @@
         "prettier": "^2.3.2",
         "reflect-metadata": "^0.1.13",
         "rxjs": "^7.3.0",
-        "ts-node": "^10.2.0",
         "tslib": "^2.3.1",
         "typescript": "^4.3.5"
     },
     "devDependencies": {
         "@types/node": "^16.6.1",
         "i18next": "^20.4.0",
-        "ts-node": "^10.2.0",
         "tsconfig-paths": "^3.10.1",
         "tslib": "^2.3.1",
         "typescript": "^4.3.5"
     },
     "jest": {},
     "scripts": {
-        "start": "npx ts-node -r tsconfig-paths/register src/app.ts"
+        "dev-start": "npx ts-node-dev -r tsconfig-paths/register --respawn --transpile-only src/app.ts"
     },
     "resolutions": {
         "ansi-styles": "^3.2.0"

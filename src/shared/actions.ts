@@ -1,5 +1,5 @@
 import client from 'shared/client';
-import { deblog } from 'shared/utils';
+import { deblog, fpdeblog } from 'shared/utils';
 import chalk from 'chalk';
 
 export const handleError = ({ name, message }: Error) => {
@@ -9,23 +9,25 @@ export const handleError = ({ name, message }: Error) => {
         message,
       )}'`,
     ),
+    'error',
   );
   shutdown();
 };
 
 const login = async () => {
-  deblog('loggingIn');
+  deblog('loggingIn', 'notice');
   await client.login(process.env.TOKEN);
-  deblog('loggedIn');
 };
 
 export const startup = async () => {
-  deblog('startup');
-  await login();
+  deblog('startup', 'notice');
+  await login()
+    .then(fpdeblog('loggedIn', 'approval'))
+    .catch(fpdeblog('loggingInFailed', 'error'));
 };
 
 export const shutdown = () => {
-  deblog('shutdown');
+  deblog('shutdown', 'notice');
   client.destroy();
   process.exit();
 };
