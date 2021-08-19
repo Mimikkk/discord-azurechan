@@ -1,6 +1,6 @@
 import { TextChannel } from 'discord.js';
 import Channels from 'shared/cache/channels';
-import { formatLog } from './util';
+import { formatLog } from './format';
 
 export const log = async (s: string, channel: TextChannel = Channels.Testing) =>
   await channel.send({ content: formatLog(s) });
