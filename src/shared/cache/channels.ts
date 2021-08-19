@@ -4,7 +4,7 @@ export enum BuiltinChannel {
   Testing = '685033364037566465',
 }
 
-export type ChannelCache = Record<id, TextChannel>;
+export type ChannelCache = Record<string, TextChannel>;
 
 const Channels: ChannelCache = {
   [BuiltinChannel.Testing]: null!,

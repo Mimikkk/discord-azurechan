@@ -14,17 +14,18 @@ export const handleError = ({ name, message }: Error) => {
 };
 
 const login = async () => {
-  deblog('logging in');
+  deblog('loggingIn');
   await client.login(process.env.TOKEN);
+  deblog('loggedIn');
 };
 
 export const startup = async () => {
-  deblog(chalk.green('Getting Started...'));
+  deblog('startup');
   await login();
 };
 
 export const shutdown = () => {
-  deblog(chalk.red('Shutting Down...'));
+  deblog('shutdown');
   client.destroy();
   process.exit();
 };
