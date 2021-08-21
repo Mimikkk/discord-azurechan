@@ -4,30 +4,27 @@ import chalk from 'chalk';
 
 export const handleError = ({ name, message }: Error) => {
   deblog(
-    chalk.red(
-      `Error Encountered '${chalk.bold.white(name)}' with '${chalk.yellow(
-        message,
-      )}'`,
-    ),
-    'error',
+    `error`,
+    'errorEncountered',
+    `'${chalk.bold.white(name)}' in '${chalk.yellow(message)}'`,
   );
   shutdown();
 };
 
 const login = async () => {
-  deblog('loggingIn', 'notice');
+  deblog('notice', 'loggingIn');
   await client.login(process.env.TOKEN);
 };
 
 export const startup = async () => {
-  deblog('startup', 'notice');
+  deblog('notice', 'startup');
   await login()
-    .then(fpdeblog('loggedIn', 'approval'))
-    .catch(fpdeblog('loggingInFailed', 'error'));
+    .then(fpdeblog('approval', 'loggedIn'))
+    .catch(fpdeblog('error', 'loggingInFailed'));
 };
 
 export const shutdown = () => {
-  deblog('shutdown', 'notice');
+  deblog('notice', 'shutdown');
   client.destroy();
   process.exit();
 };

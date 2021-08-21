@@ -1,7 +1,7 @@
 import { LogType } from 'shared/utils/log/types';
 import { formatLog } from './format';
 
-export const log = (message: string, type?: LogType) =>
-  console.log(formatLog(message, type));
-export const fplog = (message: string, type?: LogType) => () =>
-  log(message, type);
+export const log = (type: LogType, message: string, extra?: string) =>
+  console.log(formatLog(type, message), extra || '');
+export const fplog = (type: LogType, message: string, extra?: string) => () =>
+  log(type, message, extra);

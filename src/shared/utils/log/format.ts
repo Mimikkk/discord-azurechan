@@ -1,9 +1,18 @@
-import chalk from 'chalk';
 import i18n from 'i18next';
 import { LogType } from 'shared/utils/log/types';
 
-const t = (key: string) => i18n.t(`messages.${key}`);
+const t = (key: string) => i18n.t(`${key}`);
 
-export const formatLog = (message: string, type?: LogType): string =>
-  `${chalk.blue('Discord')}:${type ? `:${t(`logtype.${type}`)}:` : ''} 
-  ${t(message)}`;
+export const loggerCache = {
+  previousType: null,
+};
+
+export const formatLog = (type: LogType, message: string): string => {
+  const isPreviousType = type !== loggerCache.previousType;
+  const base = isPreviousType
+    ? `${t('discord')}::${t(`messages.logtype.${type}`)}:\n`
+    : '';
+
+  loggerCache.previousType = type;
+  return `${base}  ${t(`messages.${message}`)}`;
+};

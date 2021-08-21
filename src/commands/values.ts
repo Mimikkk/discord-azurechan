@@ -1,9 +1,9 @@
 import { ApplicationCommandData } from 'discord.js';
 
-const commands: ApplicationCommandData[] = [
+export const Commands: ApplicationCommandData[] = [
   {
-    name: 'shipgirl',
-    description: 'fetch shipgirl info embed',
+    name: 'azurechibi',
+    description: 'fetch chibi girl embed',
     options: [
       {
         name: 'a',
@@ -14,36 +14,38 @@ const commands: ApplicationCommandData[] = [
     ],
   },
   {
-    name: 'a',
-    description: 'description',
-    defaultPermission: true,
+    name: 'azuregirl',
+    description: 'fetch azuregirl info embed',
     options: [
       {
-        name: 'aa',
+        name: 'a',
+        description: 'raa',
         type: 'SUB_COMMAND',
-        description: 'Epic',
-        options: [
-          {
-            name: 'aaa',
-            description: 'AniaAnia',
-            type: 'CHANNEL',
-          },
-          {
-            name: 'aab',
-            description: 'AniaAnia',
-            type: 'CHANNEL',
-          },
-        ],
+        options: [{ name: 'hih', description: 'hah', type: 'BOOLEAN' }],
       },
+    ],
+  },
+  {
+    name: 'azureitem',
+    description: 'fetch azureitem info embed',
+    options: [
       {
-        name: 'ab',
+        name: 'a',
+        description: 'raa',
         type: 'SUB_COMMAND',
-        description: 'Epic',
+        options: [{ name: 'hih', description: 'hah', type: 'BOOLEAN' }],
       },
+    ],
+  },
+  {
+    name: 'azureevent',
+    description: 'fetch event info embed',
+    options: [
       {
-        name: 'ac',
+        name: 'a',
+        description: 'raa',
         type: 'SUB_COMMAND',
-        description: 'Epic',
+        options: [{ name: 'hih', description: 'hah', type: 'BOOLEAN' }],
       },
     ],
   },

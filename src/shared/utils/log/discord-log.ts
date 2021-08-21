@@ -4,12 +4,16 @@ import { LogType } from 'shared/utils/log/types';
 import { formatLog } from './format';
 
 export const log = async (
-  s: string,
-  type?: LogType,
+  type: LogType,
+  message: string,
   channel: TextChannel = Channels.Testing,
-) => await channel.send({ content: formatLog(s) });
+) => await channel.send({ content: formatLog(type, message) });
 
 export const fplog =
-  (s: string, type?: LogType, channel: TextChannel = Channels.Testing) =>
+  (
+    type: LogType = 'notice',
+    message: string,
+    channel: TextChannel = Channels.Testing,
+  ) =>
   async () =>
-    await log(s, type, channel);
+    await log(type, message, channel);

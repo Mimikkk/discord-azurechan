@@ -7,9 +7,8 @@ const deleteCommand = (
 ) => command.delete();
 
 export const removeCommands = () => {
+  deblog('notice', 'setup.commands.cleanup');
   client.application.commands.cache.forEach(deleteCommand);
-  console.log(client.application.commands.cache.size);
-  deblog('cleanupCommands', 'notice');
 };
 
 client.once('ready', removeCommands);

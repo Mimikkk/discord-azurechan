@@ -5,12 +5,18 @@ export default {
     loggingIn: chalk.yellow('Logging in...'),
     loggedIn: chalk.green('Logged in!'),
     loggingInFailed: chalk.red('Logging in Failed.'),
-    startup: chalk.blueBright('Getting Started'),
+    startup: chalk.blueBright('Getting Started.'),
     shutdown: chalk.red('Shutting down...'),
     setup: {
       testingChannel: chalk.gray('Testing channel set up.'),
+      commands: {
+        guild: chalk.yellow('Creating commands for:'),
+        start: chalk.magenta('Started adding commands to servers.'),
+        create: chalk.gray('Creating command:'),
+        finish: chalk.gray('Finished adding commands to servers.'),
+        cleanup: chalk.gray('Removed all current commands.'),
+      },
     },
-    cleanupCommands: chalk.gray('Removed all current commands'),
     logtype: {
       listener: chalk.magenta('Listener'),
       warning: chalk.yellow('Warning'),
@@ -18,5 +24,7 @@ export default {
       notice: chalk.gray('Notice'),
       error: chalk.red('Error'),
     },
+    errorEncountered: 'Error Encountered!:',
   },
+  discord: chalk.blue('Discord'),
 };

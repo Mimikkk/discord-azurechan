@@ -4,7 +4,7 @@ import { deblog } from 'shared/utils';
 import { Channels, BuiltinChannel } from 'shared/cache/channels';
 
 const setupTestingChannel = () => {
-  deblog('setup.testingChannel', 'listener');
+  deblog('listener', 'setup.testingChannel');
   Channels[BuiltinChannel.Testing] = client.channels.cache.get(
     BuiltinChannel.Testing,
   ) as TextChannel;
