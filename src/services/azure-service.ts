@@ -1,3 +1,3 @@
 import { AzurAPI } from '@azurapi/azurapi';
-const AzureService = new AzurAPI();
-export default AzureService;
+const Service = new AzurAPI({ autoupdate: true });
+export default Service;

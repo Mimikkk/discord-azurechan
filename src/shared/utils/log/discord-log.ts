@@ -1,6 +1,6 @@
+import { Channels } from 'shared/cache/channels/channels';
 import { TextChannel } from 'discord.js';
-import { Channels } from 'shared/cache/channels';
-import { LogType } from 'shared/utils/log/types';
+import { LogType } from './types';
 import { formatLog } from './format';
 
 export const log = async (

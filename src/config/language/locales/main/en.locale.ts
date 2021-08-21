@@ -7,6 +7,7 @@ export default {
     loggingInFailed: chalk.red('Logging in Failed.'),
     startup: chalk.blueBright('Getting Started.'),
     shutdown: chalk.red('Shutting down...'),
+    invite: chalk.green('Invitation Link:'),
     setup: {
       channels: {
         clear: chalk.gray('Channel messages cleared:'),

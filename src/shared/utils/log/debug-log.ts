@@ -1,4 +1,4 @@
-import { LogType } from 'shared/utils/log/types';
+import { LogType } from './types';
 import { formatLog } from './format';
 
 export const log = (type: LogType, message: string, extra?: string) =>

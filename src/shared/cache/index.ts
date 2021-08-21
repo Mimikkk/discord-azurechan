@@ -1,1 +1,1 @@
-export * from './channels';
+export { Channels } from './channels';

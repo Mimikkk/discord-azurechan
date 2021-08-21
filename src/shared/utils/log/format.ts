@@ -1,5 +1,5 @@
 import i18n from 'i18next';
-import { LogType } from 'shared/utils/log/types';
+import { LogType } from './types';
 
 const t = (key: string) => i18n.t(`${key}`);
 

@@ -1,6 +1,3 @@
-export enum CommandType {
-  AzureChibi = 'azurechibi',
-  AzureGirl = 'azuregirl',
-  AzureItem = 'azureitem',
-  AzureEvent = 'azureevent',
-}
+import { AzureCommandType } from './azure';
+
+export type CommandType = AzureCommandType;

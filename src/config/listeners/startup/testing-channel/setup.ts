@@ -1,13 +1,8 @@
 import client from 'shared/client';
-import { TextChannel } from 'discord.js';
 import { deblog } from 'shared/utils';
-import { Channels, BuiltinChannel } from 'shared/cache/channels';
 
-const setup = () => {
-  deblog('listener', 'setup.channels.create', 'Testing');
-  Channels[BuiltinChannel.Testing] = client.channels.cache.get(
-    BuiltinChannel.Testing,
-  ) as TextChannel;
+export const setup = async () => {
+  deblog('error', 'setup.channels.create', 'heck');
+  await client.guilds.fetch().then(/*Find and setup correct Testing Channel*/);
+  deblog('error', 'setup.channels.create', 'heck');
 };
-
-client.once('ready', setup);

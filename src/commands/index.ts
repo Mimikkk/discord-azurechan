@@ -1,1 +1,7 @@
-export { Handlers as InteractionHandlers } from './interactions';
+import { OnInteractionHandlers as OnAzureInteractionHandlers } from './azure';
+import { OnInteractionHandlerMap } from 'shared/types/handlers';
+import { CommandType } from './types';
+
+export const OnInteractionHandlers: OnInteractionHandlerMap<CommandType> = {
+  ...OnAzureInteractionHandlers,
+};

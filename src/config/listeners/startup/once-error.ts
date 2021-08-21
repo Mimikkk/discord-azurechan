@@ -1,9 +1,8 @@
 import chalk from 'chalk';
-import client from 'shared/client';
 import { shutdown } from 'shared/actions';
 import { deblog } from 'shared/utils';
 
-export const onError = ({ name, message }: Error) => {
+export const onceError = async ({ name, message }: Error) => {
   deblog(
     `error`,
     'errorEncountered',
@@ -11,5 +10,3 @@ export const onError = ({ name, message }: Error) => {
   );
   shutdown();
 };
-
-client.once('error', onError);

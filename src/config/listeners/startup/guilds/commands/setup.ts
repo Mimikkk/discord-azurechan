@@ -14,10 +14,8 @@ const setupGuildCommands = (guild: Guild) => {
   Commands.forEach(fp.curry(setupCommand)(guild));
 };
 
-export const setupGuildsCommands = () => {
+export const setup = async () => {
   deblog('notice', 'setup.commands.start');
-  client.guilds.cache.forEach(setupGuildCommands);
+  await client.guilds.cache.forEach(setupGuildCommands);
   deblog('approval', 'setup.commands.finish');
 };
-
-client.once('ready', setupGuildsCommands);
