@@ -10,6 +10,7 @@ export default {
     setup: {
       testingChannel: chalk.gray('Testing channel set up.'),
     },
+    cleanupCommands: chalk.gray('Removed all current commands'),
     logtype: {
       listener: chalk.magenta('Listener'),
       warning: chalk.yellow('Warning'),

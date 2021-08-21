@@ -1,5 +1,5 @@
 import { TextChannel } from 'discord.js';
-import Channels from 'shared/cache/channels';
+import { Channels } from 'shared/cache/channels';
 import { LogType } from 'shared/utils/log/types';
 import { formatLog } from './format';
 

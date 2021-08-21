@@ -12,10 +12,8 @@
     "lib": ["es2017", "esnext.asynciterable"],
     "moduleResolution": "node",
     "esModuleInterop": true,
-    "rootDir": "./",
-    "sourceRoot": "src",
     "baseUrl": "src"
   },
   "exclude": ["node_modules"],
-  "include": ["src"]
+  "include": ["./src", "*.ts"]
 }

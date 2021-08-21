@@ -6,7 +6,6 @@ export enum BuiltinChannel {
 
 export type ChannelCache = Record<string, TextChannel>;
 
-const Channels: ChannelCache = {
+export const Channels: ChannelCache = {
   [BuiltinChannel.Testing]: null!,
 };
-export default Channels;

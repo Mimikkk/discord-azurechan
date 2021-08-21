@@ -2,6 +2,18 @@ import { ApplicationCommandData } from 'discord.js';
 
 const commands: ApplicationCommandData[] = [
   {
+    name: 'shipgirl',
+    description: 'fetch shipgirl info embed',
+    options: [
+      {
+        name: 'a',
+        description: 'raa',
+        type: 'SUB_COMMAND',
+        options: [{ name: 'hih', description: 'hah', type: 'BOOLEAN' }],
+      },
+    ],
+  },
+  {
     name: 'a',
     description: 'description',
     defaultPermission: true,

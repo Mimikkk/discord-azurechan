@@ -7,36 +7,34 @@
     "author": "github.com/Mimikkk",
     "dependencies": {
         "@azurapi/azurapi": "^1.0.3",
+        "@babel/preset-typescript": "^7.15.0",
         "@types/chalk": "^2.2.0",
-        "@types/faker": "^5.5.8",
-        "@types/jest": "^27.0.1",
         "@types/lodash": "^4.14.172",
         "chalk": "^4.1.2",
         "discord-api-types": "^0.22.0",
         "discord.js": "^13.1.0",
         "dotenv": "^10.0.0",
-        "faker": "^5.5.3",
         "fuse.js": "^6.4.6",
-        "jest": "^27.0.6",
         "lodash": "^4.17.21",
-        "prettier": "^2.3.2",
         "reflect-metadata": "^0.1.13",
         "rxjs": "^7.3.0",
-        "tslib": "^2.3.1",
-        "typescript": "^4.3.5"
+        "tslib": "^2.3.1"
     },
     "devDependencies": {
+        "@types/faker": "^5.5.8",
+        "@types/jest": "^27.0.1",
         "@types/node": "^16.6.1",
+        "faker": "^5.5.3",
         "i18next": "^20.4.0",
+        "jest": "^27.0.6",
+        "prettier": "^2.3.2",
+        "ts-jest": "^27.0.5",
         "tsconfig-paths": "^3.10.1",
         "tslib": "^2.3.1",
         "typescript": "^4.3.5"
     },
-    "jest": {},
     "scripts": {
-        "dev-start": "npx ts-node-dev -r tsconfig-paths/register --respawn --transpile-only src/app.ts"
-    },
-    "resolutions": {
-        "ansi-styles": "^3.2.0"
+        "dev-start": "npx ts-node-dev -r tsconfig-paths/register --respawn src/app.ts",
+        "test": "npx jest"
     }
 }
