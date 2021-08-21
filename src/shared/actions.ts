@@ -1,15 +1,5 @@
 import client from 'shared/client';
 import { deblog, fpdeblog } from 'shared/utils';
-import chalk from 'chalk';
-
-export const handleError = ({ name, message }: Error) => {
-  deblog(
-    `error`,
-    'errorEncountered',
-    `'${chalk.bold.white(name)}' in '${chalk.yellow(message)}'`,
-  );
-  shutdown();
-};
 
 const login = async () => {
   deblog('notice', 'loggingIn');

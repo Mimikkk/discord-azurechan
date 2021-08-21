@@ -8,7 +8,10 @@ export default {
     startup: chalk.blueBright('Getting Started.'),
     shutdown: chalk.red('Shutting down...'),
     setup: {
-      testingChannel: chalk.gray('Testing channel set up.'),
+      channels: {
+        clear: chalk.gray('Channel messages cleared:'),
+        create: chalk.gray('Channel created:'),
+      },
       commands: {
         guild: chalk.yellow('Creating commands for:'),
         start: chalk.magenta('Started adding commands to servers.'),

@@ -1,2 +1,2 @@
 import './startup';
-import 'config/listeners/handle-interactions';
+import './on-interaction';

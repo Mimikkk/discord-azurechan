@@ -1,5 +1,5 @@
 import i18n from 'i18next';
-import main from 'config/language/locales/main/en.locale';
+import main from './locales/main/en.locale';
 
 const resources = {
   en: { main },
