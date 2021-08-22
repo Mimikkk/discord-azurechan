@@ -5,7 +5,7 @@ import { FetchBuilderProps, FetchGeneratorProps, FetchHandlers } from './types';
 
 export const generateFetchHandlers = <State extends object, Payload>({
   empty,
-  handleSuccessful,
+  handlePayload,
 }: FetchGeneratorProps<State, Payload>): FetchHandlers<State, Payload> => ({
   handlePending: (): StoreState<State> => ({
     ...empty,
@@ -21,7 +21,7 @@ export const generateFetchHandlers = <State extends object, Payload>({
   handleFulfilled: (
     _: Draft<StoreState<State>>,
     action: any,
-  ): StoreState<State> => handleSuccessful(action.payload),
+  ): StoreState<State> => handlePayload(action.payload),
 });
 
 export const withFetch = <State extends object, Payload, Props>({

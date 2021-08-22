@@ -1,19 +1,12 @@
 import { createReducer } from '@reduxjs/toolkit';
-import { ResponseStatus } from 'shared/types/common';
 import {
   generateFetchHandlers,
   generateResetHandlers,
   withFetch,
   withReset,
 } from 'store/reducers/builder';
-import { StoreState } from 'store/reducers/types';
-import { reset, fetchNumbers } from './actions';
-
-const initial: StoreState<{ numbers: number[] }> = {
-  numbers: [],
-  error: null,
-  status: ResponseStatus.Idle,
-};
+import { initial } from './initial';
+import { reset, fetchNumbers, handlePayload } from './actions';
 
 export const reducer = createReducer(initial, (builder) => {
   withReset({
@@ -26,11 +19,7 @@ export const reducer = createReducer(initial, (builder) => {
     fetch: fetchNumbers,
     handlers: generateFetchHandlers({
       empty: initial,
-      handleSuccessful: (payload: number[]) => ({
-        numbers: payload,
-        error: null,
-        status: ResponseStatus.Success,
-      }),
+      handlePayload,
     }),
   });
 });
