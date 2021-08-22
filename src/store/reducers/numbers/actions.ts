@@ -9,5 +9,5 @@ export const fetchNumbers = createAsyncThunk<
   number,
   AsyncThunkConfig
 >('@numbers/fetch', async (count, { extra }) =>
-  extra.TestingService.fetchNumbers(count),
+  extra.NumbersService.fetchNumbers(count),
 );

@@ -1,5 +1,6 @@
 import { Collection, Guild, Snowflake } from 'discord.js';
 import client from 'shared/client';
+
 const service = {
   fetchAuths: async () => client.guilds.fetch(),
   fetchGuilds: async () => {

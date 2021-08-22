@@ -9,6 +9,6 @@ startup().catch(console.error);
 
 client.once('ready', async () => {
   console.log(useSelect(selectNumbers));
-  useDispatch(fetchNumbers(4));
+  await useDispatch(fetchNumbers(4));
   console.log(useSelect(selectNumbers));
 });
