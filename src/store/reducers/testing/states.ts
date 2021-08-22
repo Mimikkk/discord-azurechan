@@ -1,5 +1,5 @@
 import { ResponseStatus } from 'shared/types/common';
-import { State } from 'store/reducers/testing/types';
+import { State } from './types';
 
 export const getIdle = (): State => ({
   status: ResponseStatus.Idle,

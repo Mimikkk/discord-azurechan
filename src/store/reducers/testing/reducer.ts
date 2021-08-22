@@ -1,12 +1,7 @@
 import { createReducer } from '@reduxjs/toolkit';
-import {
-  getFailed,
-  getIdle,
-  getLoading,
-  createSuccessful,
-} from 'store/reducers/testing/states';
+import { getFailed, getIdle, getLoading, createSuccessful } from './states';
 
-import { fetchNumbers, resetNumbers } from 'store/reducers/testing/actions';
+import { fetchNumbers, resetNumbers } from './actions';
 
 export const reducer = createReducer(getIdle(), (builder) => {
   builder
