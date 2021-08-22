@@ -1,9 +1,8 @@
 import { OnceError } from './values';
 import client from 'shared/client';
-import _ from 'lodash';
 
 const onceError = async (error: Error) => {
-  _.forEach(OnceError, async (fn) => await fn(error));
+  for (const fn of OnceError) await fn(error);
 };
 
 client.once('error', onceError);

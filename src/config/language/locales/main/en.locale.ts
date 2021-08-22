@@ -10,8 +10,11 @@ export default {
     invite: chalk.green('Invitation Link:'),
     setup: {
       channels: {
-        clear: chalk.gray('Channel messages cleared:'),
-        create: chalk.gray('Channel created:'),
+        startClear: chalk.gray('Clearing channel messages:'),
+        finishClear: chalk.gray('Channel messages were cleared.'),
+        countClear: chalk.gray('Messages deleted:'),
+        startCreate: chalk.gray('Creating channel:'),
+        finishCreate: chalk.gray('Channel creation finished.'),
       },
       commands: {
         guild: chalk.yellow('Creating commands for:'),

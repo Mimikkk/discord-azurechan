@@ -6,7 +6,7 @@ export const onceError = async ({ name, message }: Error) => {
   deblog(
     `error`,
     'errorEncountered',
-    `'${chalk.bold.white(name)}' in '${chalk.yellow(message)}'`,
+    `'${chalk.bold.white(name)}' with '${chalk.yellow(message)}'`,
   );
   shutdown();
 };
