@@ -5,7 +5,8 @@ export default {
     loggingIn: chalk.yellow('Logging in...'),
     loggedIn: chalk.green('Logged in!'),
     loggingInFailed: chalk.red('Logging in Failed.'),
-    startup: chalk.blueBright('Getting Started.'),
+    startStartup: chalk.blueBright('Getting Ready.'),
+    finishStartup: chalk.blueBright('Finished Startup!'),
     shutdown: chalk.red('Shutting down...'),
     invite: chalk.green('Invitation Link:'),
     setup: {

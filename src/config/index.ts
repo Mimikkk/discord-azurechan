@@ -1,5 +1,3 @@
-import { config } from 'dotenv';
-config();
-
+import './dotenv';
 import './language';
 import './listeners';

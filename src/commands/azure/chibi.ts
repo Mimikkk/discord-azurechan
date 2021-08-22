@@ -1,5 +1,6 @@
 import { CommandInteraction, MessageEmbed } from 'discord.js';
-export const handleChibi = (interaction: CommandInteraction) => {
+
+export const handleChibi = async (interaction: CommandInteraction) => {
   const embed = new MessageEmbed({ description: 'chibi' });
-  interaction.reply({ embeds: [embed] });
+  await interaction.reply({ embeds: [embed] });
 };

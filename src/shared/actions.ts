@@ -7,10 +7,11 @@ const login = async () => {
 };
 
 export const startup = async () => {
-  deblog('notice', 'startup');
+  deblog('notice', 'startStartup');
   await login()
     .then(fpdeblog('approval', 'loggedIn'))
     .catch(fpdeblog('error', 'loggingInFailed'));
+  deblog('notice', 'finishStartup');
 };
 
 export const shutdown = () => {

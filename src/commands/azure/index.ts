@@ -10,10 +10,9 @@ export type AzureCommandType =
   | 'AzureGirl'
   | 'AzureItem';
 
-export const OnInteractionHandlers: OnInteractionHandlerMap<AzureCommandType> =
-  {
-    AzureEvent: handleEvent,
-    AzureChibi: handleChibi,
-    AzureGirl: handleGirl,
-    AzureItem: handleItem,
-  };
+export const OnInteractionHandlers: {} = {
+  AzureEvent: handleEvent,
+  AzureChibi: handleChibi,
+  AzureGirl: handleGirl,
+  AzureItem: handleItem,
+};
