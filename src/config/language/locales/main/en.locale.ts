@@ -30,11 +30,17 @@ export default {
         finishCreate: chalk.gray('Channel creation finished.'),
       },
       commands: {
-        cleanup: chalk.gray('Removed all current commands.'),
-        start: chalk.magenta('Started adding commands to servers.'),
-        guild: chalk.yellow(`Creating commands for ${chalk.blue('{{name}}')}`),
-        create: chalk.gray(`Creating command ${chalk.blue('{{name}}')}`),
-        finish: chalk.gray('Finished adding commands to servers.'),
+        clear: {
+          start: chalk.gray('Removing all current commands...'),
+          from: chalk.gray(`Removing commands for ${chalk.blue('{{name}}')}`),
+          finish: chalk.gray('Removed all current commands.'),
+        },
+        add: {
+          start: chalk.magenta('Started adding commands to servers.'),
+          for: chalk.yellow(`Creating commands for ${chalk.blue('{{name}}')}`),
+          create: chalk.gray(`Creating command ${chalk.blue('{{name}}')}`),
+          finish: chalk.gray('Finished adding commands to servers.'),
+        },
       },
     },
     logtype: {
