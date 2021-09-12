@@ -5,6 +5,6 @@ export const handlePayload = (
   payload: Collection<Snowflake, Guild>,
 ): GuildsData => ({
   snowflakes: [...payload.keys()],
-  guilds: [...payload.values()],
+  list: [...payload.values()],
   mapBySnowflake: payload,
 });

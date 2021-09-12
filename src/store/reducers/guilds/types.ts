@@ -2,9 +2,9 @@ import { Collection, Guild, Snowflake } from 'discord.js';
 import { StoreData, StoreState } from 'store/reducers/types';
 
 export type GuildsData = StoreData<{
-  mapBySnowflake: Collection<Snowflake, Guild>;
+  list: Guild[];
   snowflakes: Snowflake[];
-  guilds: Guild[];
+  mapBySnowflake: Collection<Snowflake, Guild>;
 }>;
 
 export type GuildsState = StoreState<GuildsData>;

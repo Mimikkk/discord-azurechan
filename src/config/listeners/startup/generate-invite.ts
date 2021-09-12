@@ -9,5 +9,5 @@ const inviteData: InviteGenerationOptions = {
 
 export const generateInvite = async () => {
   const invite = client.generateInvite(inviteData);
-  deblog('approval', 'invite', invite);
+  deblog('approval', 'invite', { invite });
 };

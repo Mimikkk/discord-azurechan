@@ -5,9 +5,8 @@ const selectStore = (state: RootState) => state.Guilds;
 
 export const selectGuilds = createSelector(
   selectStore,
-  ({ guilds, collection, mapBySnowflake, snowflakes }) => ({
-    guilds,
-    collection,
+  ({ list, mapBySnowflake, snowflakes }) => ({
+    list,
     mapBySnowflake,
     snowflakes,
   }),

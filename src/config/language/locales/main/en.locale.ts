@@ -8,20 +8,32 @@ export default {
     startStartup: chalk.blueBright('Getting Ready.'),
     finishStartup: chalk.blueBright('Finished Startup!'),
     shutdown: chalk.red('Shutting down...'),
-    invite: chalk.green('Invitation Link:'),
+    invite: chalk.green(`Invitation Link: {{invite}}`),
     setup: {
+      guilds: {
+        linkStarted: chalk.magenta('Linking servers...'),
+        link: chalk.magenta(`Linked: ${chalk.blue('{{name}}')}`),
+        total: chalk.magenta(
+          `Linked total of ${chalk.blue('{{total}}')} guilds.`,
+        ),
+        linkFinished: chalk.magenta('Linked servers.'),
+      },
       channels: {
-        startClear: chalk.gray('Clearing channel messages:'),
+        startClear: chalk.gray(
+          `Clearing channel messages: ${chalk.blue('{{name}}')}`,
+        ),
         finishClear: chalk.gray('Channel messages were cleared.'),
-        countClear: chalk.gray('Messages deleted:'),
-        startCreate: chalk.gray('Creating channel:'),
+        countClear: chalk.gray(
+          `Deleted total of  ${chalk.blue('{{total}}')} messages.`,
+        ),
+        startCreate: chalk.gray(`Creating channel:  ${chalk.blue('{{name}}')}`),
         finishCreate: chalk.gray('Channel creation finished.'),
       },
       commands: {
         cleanup: chalk.gray('Removed all current commands.'),
         start: chalk.magenta('Started adding commands to servers.'),
-        guild: chalk.yellow('Creating commands for:'),
-        create: chalk.gray('Creating command:'),
+        guild: chalk.yellow(`Creating commands for ${chalk.blue('{{name}}')}`),
+        create: chalk.gray(`Creating command ${chalk.blue('{{name}}')}`),
         finish: chalk.gray('Finished adding commands to servers.'),
       },
     },
@@ -32,7 +44,11 @@ export default {
       notice: chalk.gray('Notice'),
       error: chalk.red('Error'),
     },
-    errorEncountered: 'Error Encountered!:',
+    errorEncountered: chalk.red(
+      `Error Encountered!: ${chalk.redBright(
+        `${chalk.bold.white('{{name}}')} with ${chalk.yellow('{{message}}')}`,
+      )}`,
+    ),
   },
   discord: chalk.blue('Discord'),
 };

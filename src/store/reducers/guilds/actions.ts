@@ -11,12 +11,13 @@ export const fetchGuilds = createAsyncThunk<
   Collection<Snowflake, Guild>,
   undefined,
   AsyncThunkConfig
->(`@${prefix}/fetchAll`, async (_, { extra }) =>
-  extra.GuildService.fetchGuilds(),
+>(
+  `@${prefix}/fetch`,
+  async (_, { extra }) => await extra.GuildService.fetchGuilds(),
 );
 
 export const createGuild = createAsyncThunk<undefined, Guild, AsyncThunkConfig>(
-  `@${prefix}/createNew`,
+  `@${prefix}/create`,
   async (_, {}) => {
     return undefined;
   },
