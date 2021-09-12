@@ -5,7 +5,7 @@ import {
   withFetch,
   withReset,
 } from 'store/reducers/builder';
-import { handleInitial } from 'store/reducers/handlers';
+import { handleInitial } from 'store/reducers/builder/handlers';
 import { NumbersState } from 'store/reducers/numbers/types';
 import { fetchNumbers, handlePayload, resetNumbers } from './actions';
 import { initial } from './initial';

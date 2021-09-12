@@ -1,4 +1,4 @@
-import { handleInitial } from 'store/reducers/handlers';
+import { handleInitial } from 'store/reducers/builder/handlers';
 import { ResetBuilderProps, ResetHandlers } from './types';
 import { StoreData } from 'store/reducers/types';
 

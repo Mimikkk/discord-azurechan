@@ -1,6 +1,6 @@
 import { ResponseStatus } from 'shared/types/common';
 import { useDispatch, useSelector } from 'store';
-import { fetchNumbers, resetNumbers } from 'store/reducers/numbers/actions';
+import { fetchNumbers, resetNumbers } from './actions';
 import { selectNumbers } from './selectors';
 
 describe('Numbers Reducer', () => {

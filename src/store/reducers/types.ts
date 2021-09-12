@@ -5,4 +5,4 @@ export type StoreInfo = {
   error: Error;
 };
 export type StoreData<T extends object> = T;
-export type StoreState<T extends object> = StoreInfo & StoreData<T>;
+export type StoreState<T extends StoreData<object>> = StoreInfo & T;
