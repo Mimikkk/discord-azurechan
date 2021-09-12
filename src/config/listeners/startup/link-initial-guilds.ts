@@ -12,9 +12,9 @@ export const linkInitialGuilds = async () => {
   deblog('notice', 'setup.guilds.linkStarted');
 
   await useDispatch(fetchGuilds());
-  const { list } = useSelector(selectGuilds);
+  const { list, total } = useSelector(selectGuilds);
   await linkGuilds(list);
 
-  deblog('notice', 'setup.guilds.total', { total: list.length });
+  deblog('notice', 'setup.guilds.total', { total });
   deblog('notice', 'setup.guilds.linkFinished');
 };

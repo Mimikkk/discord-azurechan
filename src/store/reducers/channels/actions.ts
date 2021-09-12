@@ -1,12 +1,16 @@
-import { createAction, createAsyncThunk } from '@reduxjs/toolkit';
+import { createAsyncThunk } from '@reduxjs/toolkit';
+import { Channel, Guild } from 'discord.js';
+import { createReset } from 'store/reducers/builder';
 import { AsyncThunkConfig } from 'store/types';
 
-export const resetNumbers = createAction('@numbers/reset');
+const prefix = 'channels';
 
-export const fetchNumbers = createAsyncThunk<
-  number[],
-  number,
+export const resetChannels = createReset(prefix);
+
+export const fetchChannels = createAsyncThunk<
+  Channel[],
+  Guild,
   AsyncThunkConfig
->('@numbers/fetchNumbers', async (count, { extra }) => {
-  return extra.NumbersService.fetchNumbers(count);
+>(`@${prefix}/fetch`, async (_, {}) => {
+  return undefined;
 });

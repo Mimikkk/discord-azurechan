@@ -7,4 +7,5 @@ export const handlePayload = (
   snowflakes: [...payload.keys()],
   list: [...payload.values()],
   mapBySnowflake: payload,
+  total: payload.size,
 });
