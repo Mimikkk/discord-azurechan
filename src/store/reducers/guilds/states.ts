@@ -1,8 +1,8 @@
 import { Collection, Guild, Snowflake } from 'discord.js';
 import { Nullable, ResponseStatus } from 'shared/types/common';
-import { State } from './types';
+import { GuildState } from './types';
 
-const emptyData: Omit<State, 'status'> = {
+const initial: Omit<GuildState, 'status'> = {
   mapBySnowflake: () => null,
   collection: new Collection(),
   snowflakes: [],
@@ -10,22 +10,14 @@ const emptyData: Omit<State, 'status'> = {
   error: null,
 };
 
-export const getIdle = (): State => ({
-  ...emptyData,
-  status: ResponseStatus.Idle,
-});
-export const getLoading = (): State => ({
-  ...emptyData,
-  status: ResponseStatus.Loading,
-});
-export const getFailed = (): State => ({
-  ...emptyData,
+export const getFailed = (): GuildState => ({
+  ...initial,
   status: ResponseStatus.Failed,
   error: { message: 'Failed to fetch guilds', name: 'FailedFetch' },
 });
 export const createSuccessful = (
   payload: Collection<Snowflake, Guild>,
-): State => ({
+): GuildState => ({
   collection: payload,
   guilds: [...payload.values()],
   snowflakes: [...payload.keys()],

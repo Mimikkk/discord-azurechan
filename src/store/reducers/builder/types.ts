@@ -22,8 +22,8 @@ export type FetchBuilderProps<State extends object, Props, Payload> = {
   handlers: FetchHandlers<State, Payload>;
 };
 export type FetchGeneratorProps<State extends object, Payload> = {
-  empty: StoreData<State>;
-  handlePayload: (payload: Payload) => StoreState<State>;
+  initial: StoreData<State>;
+  handlePayload: (payload: Payload) => StoreData<State>;
 };
 
 export type ResetHandlers<State extends object> = {

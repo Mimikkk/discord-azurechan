@@ -1,8 +1,5 @@
-import { ResponseStatus } from 'shared/types/common';
-import { NumbersState } from 'store/reducers/numbers/types';
+import { NumbersData } from './types';
 
-export const initial: NumbersState = {
+export const initial: NumbersData = {
   numbers: [],
-  error: null,
-  status: ResponseStatus.Idle,
 };

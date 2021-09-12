@@ -1,15 +1,11 @@
-import { ResponseStatus } from 'shared/types/common';
+import { handleInitial } from 'store/reducers/handlers';
 import { ResetBuilderProps, ResetHandlers } from './types';
 import { StoreData } from 'store/reducers/types';
 
 export const generateResetHandlers = <State extends object>(
   initial: StoreData<State>,
 ): ResetHandlers<State> => ({
-  handleReset: () => ({
-    ...initial,
-    error: null,
-    status: ResponseStatus.Idle,
-  }),
+  handleReset: () => handleInitial(initial),
 });
 
 export const withReset = <State extends object>({

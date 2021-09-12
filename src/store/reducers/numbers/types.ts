@@ -1,3 +1,4 @@
-import { StoreState } from 'store/reducers/types';
+import { StoreData, StoreState } from 'store/reducers/types';
 
-export type NumbersState = StoreState<{ numbers: number[] }>;
+export type NumbersData = StoreData<{ numbers: number[] }>;
+export type NumbersState = StoreState<NumbersData>;

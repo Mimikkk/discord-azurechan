@@ -1,8 +1,8 @@
 export type Nullable<T> = T | null;
 
 export enum ResponseStatus {
-  Idle,
-  Loading,
-  Success,
-  Failed,
+  Idle = 'Idle',
+  Loading = 'Loading',
+  Success = 'Success',
+  Failed = 'Failed',
 }

@@ -1,16 +1,13 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { ResponseStatus } from 'shared/types/common';
 import { createReset } from 'store/reducers/builder';
-import { NumbersState } from 'store/reducers/numbers/types';
+import { NumbersData } from './types';
 import { AsyncThunkConfig } from 'store/types';
 
-export const handlePayload = (payload: number[]): NumbersState => ({
+export const handlePayload = (payload: number[]): NumbersData => ({
   numbers: payload,
-  error: null,
-  status: ResponseStatus.Success,
 });
 
-export const reset = createReset('numbers');
+export const resetNumbers = createReset('numbers');
 
 export const fetchNumbers = createAsyncThunk<
   number[],

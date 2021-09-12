@@ -4,24 +4,29 @@ import { StoreState } from 'store/reducers/types';
 import { FetchBuilderProps, FetchGeneratorProps, FetchHandlers } from './types';
 
 export const generateFetchHandlers = <State extends object, Payload>({
-  empty,
+  initial,
   handlePayload,
 }: FetchGeneratorProps<State, Payload>): FetchHandlers<State, Payload> => ({
   handlePending: (): StoreState<State> => ({
-    ...empty,
-    ...empty,
-    status: ResponseStatus.Loading,
+    ...initial,
     error: null,
+    status: ResponseStatus.Loading,
   }),
   handleRejected: (): StoreState<State> => ({
-    ...empty,
+    ...initial,
     status: ResponseStatus.Failed,
     error: { message: 'Failed to fetch the store data', name: 'FailedFetch' },
   }),
   handleFulfilled: (
     _: Draft<StoreState<State>>,
     action: any,
-  ): StoreState<State> => handlePayload(action.payload),
+  ): StoreState<State> => {
+    return {
+      ...handlePayload(action.payload),
+      error: null,
+      status: ResponseStatus.Success,
+    };
+  },
 });
 
 export const withFetch = <State extends object, Payload, Props>({

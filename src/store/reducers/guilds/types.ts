@@ -1,12 +1,11 @@
 import { Collection, Guild, Snowflake } from 'discord.js';
-import { Nullable, ResponseStatus } from 'shared/types/common';
+import { StoreData, StoreState } from 'store/reducers/types';
+import { Nullable } from 'shared/types/common';
 
-export type State = {
+export type GuildData = StoreData<{
   mapBySnowflake: (snowflake: Snowflake) => Nullable<Guild>;
   collection: Collection<Snowflake, Guild>;
   snowflakes: Snowflake[];
   guilds: Guild[];
-
-  status: ResponseStatus;
-  error: Nullable<Error>;
-};
+}>;
+export type GuildState = StoreState<GuildData>;

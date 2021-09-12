@@ -18,11 +18,11 @@ export default {
         finishCreate: chalk.gray('Channel creation finished.'),
       },
       commands: {
-        guild: chalk.yellow('Creating commands for:'),
+        cleanup: chalk.gray('Removed all current commands.'),
         start: chalk.magenta('Started adding commands to servers.'),
+        guild: chalk.yellow('Creating commands for:'),
         create: chalk.gray('Creating command:'),
         finish: chalk.gray('Finished adding commands to servers.'),
-        cleanup: chalk.gray('Removed all current commands.'),
       },
     },
     logtype: {
