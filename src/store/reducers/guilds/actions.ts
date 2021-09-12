@@ -10,7 +10,7 @@ export const fetchGuilds = createAsyncThunk<
   AsyncThunkConfig
 >('@guilds/fetchAll', async (_, { extra }) => extra.GuildService.fetchGuilds());
 
-export const putGuild = createAsyncThunk<undefined, Guild, AsyncThunkConfig>(
+export const createGuild = createAsyncThunk<undefined, Guild, AsyncThunkConfig>(
   '@guilds/putNew',
   async (_, { extra }) => {
     return undefined;

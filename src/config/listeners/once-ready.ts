@@ -1,8 +1,8 @@
 import { OnceReady } from './values';
 import client from 'shared/client';
 
-const onceReady = async () => {
+const handleReady = async () => {
   for (const fn of OnceReady) await fn();
 };
 
-client.once('ready', onceReady);
+client.once('ready', handleReady);
