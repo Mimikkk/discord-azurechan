@@ -1,18 +1,23 @@
-import { createAction, createAsyncThunk } from '@reduxjs/toolkit';
+import { createAsyncThunk } from '@reduxjs/toolkit';
 import { Collection, Guild, Snowflake } from 'discord.js';
+import { createReset } from 'store/reducers/builder';
 import { AsyncThunkConfig } from 'store/types';
 
-export const reset = createAction('@guilds/reset');
+const prefix = 'guilds';
+
+export const resetGuilds = createReset(prefix);
 
 export const fetchGuilds = createAsyncThunk<
   Collection<Snowflake, Guild>,
   undefined,
   AsyncThunkConfig
->('@guilds/fetchAll', async (_, { extra }) => extra.GuildService.fetchGuilds());
+>(`@${prefix}/fetchAll`, async (_, { extra }) =>
+  extra.GuildService.fetchGuilds(),
+);
 
 export const createGuild = createAsyncThunk<undefined, Guild, AsyncThunkConfig>(
-  '@guilds/putNew',
-  async (_, { extra }) => {
+  `@${prefix}/createNew`,
+  async (_, {}) => {
     return undefined;
   },
 );

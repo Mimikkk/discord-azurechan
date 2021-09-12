@@ -4,33 +4,24 @@ import {
   generateResetHandlers,
   withFetch,
   withReset,
+  handleInitial,
 } from 'store/reducers/builder';
-import { fetchGuilds, reset } from 'store/reducers/guilds/actions';
-import { handlePayload } from 'store/reducers/numbers/actions';
-// import { getFailed, getIdle, getLoading, createSuccessful } from './states';
+import { handlePayload } from './handlers';
+import { initial } from './initial';
+import { fetchGuilds, resetGuilds } from './actions';
 
-// export const reducer = createReducer(getIdle(), (builder) => {
-// withReset({
-//   builder,
-//   reset,
-//   handlers: generateResetHandlers(initial),
-// });
-// withFetch({
-//   builder,
-//   fetch: fetchNumbers,
-//   handlers: generateFetchHandlers({
-//     initial: initial,
-//     handlePayload,
-//   }),
-// });
-
-// @ts-ignore
-// builder
-//   .addCase(reset, getIdle)
-//   .addCase(fetchGuilds.pending, getLoading)
-//   .addCase(fetchGuilds.rejected, getFailed)
-//   .addCase(fetchGuilds.fulfilled, (_, action) =>
-//     createSuccessful(action.payload),
-//   );
-// });
-export {};
+export const reducer = createReducer(handleInitial(initial), (builder) => {
+  withReset({
+    builder,
+    reset: resetGuilds,
+    handlers: generateResetHandlers(initial),
+  });
+  withFetch({
+    builder,
+    fetch: fetchGuilds,
+    handlers: generateFetchHandlers({
+      initial: initial,
+      handlePayload,
+    }),
+  });
+});

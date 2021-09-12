@@ -6,7 +6,7 @@ import {
   withReset,
 } from 'store/reducers/builder';
 import { handleInitial } from 'store/reducers/builder/handlers';
-import { NumbersState } from 'store/reducers/numbers/types';
+import { NumbersState } from './types';
 import { fetchNumbers, handlePayload, resetNumbers } from './actions';
 import { initial } from './initial';
 
