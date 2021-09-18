@@ -35,7 +35,6 @@ export const commands: ApplicationCommandData[] = [
             type: 'STRING',
             name: 'name',
             description: "Girl's name",
-            choices: girls,
             required: true,
           },
         ],
