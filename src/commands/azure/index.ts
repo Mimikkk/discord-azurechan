@@ -2,17 +2,14 @@ import { handleChibi } from './chibi';
 import { handleEvent } from './event';
 import { handleGirl } from './girl';
 import { handleItem } from './item';
-import { OnInteractionHandlerMap } from 'shared/types/handlers';
+import { OnInteractionHandlerRecord } from 'shared/types/handlers';
 
-export type AzureCommandType =
-  | 'AzureChibi'
-  | 'AzureEvent'
-  | 'AzureGirl'
-  | 'AzureItem';
+export type AzureCommandType = 'chibi' | 'event' | 'girl' | 'item';
 
-export const OnInteractionHandlers: {} = {
-  AzureEvent: handleEvent,
-  AzureChibi: handleChibi,
-  AzureGirl: handleGirl,
-  AzureItem: handleItem,
-};
+export const OnInteractionHandlers: OnInteractionHandlerRecord<AzureCommandType> =
+  {
+    event: handleEvent,
+    chibi: handleChibi,
+    girl: handleGirl,
+    item: handleItem,
+  };

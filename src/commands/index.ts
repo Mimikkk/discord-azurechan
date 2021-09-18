@@ -1,7 +1,7 @@
 import { OnInteractionHandlers as OnAzureInteractionHandlers } from './azure';
-import { OnInteractionHandlerMap } from 'shared/types/handlers';
+import { OnInteractionHandlerRecord } from 'shared/types/handlers';
 import { CommandType } from './types';
 
-export const OnInteractionHandlers: {} = {
+export const OnInteractionHandlers: OnInteractionHandlerRecord<CommandType> = {
   ...OnAzureInteractionHandlers,
 };
