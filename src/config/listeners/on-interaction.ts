@@ -3,8 +3,6 @@ import { Interaction } from 'discord.js';
 import client from 'shared/client';
 
 export const handleInteractions = async (interaction: Interaction) => {
-  console.log({ interaction, Handlers });
-
   if (interaction.isCommand()) Handlers[interaction.commandName](interaction);
 };
 
