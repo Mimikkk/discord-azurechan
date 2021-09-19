@@ -1,4 +1,4 @@
-import { WithFn } from './types';
+import { WithFn } from 'commands/azure/embeds/builder/types';
 import { ColorResolvable } from 'discord.js';
 
 const colorByStars: Record<number, ColorResolvable> = {

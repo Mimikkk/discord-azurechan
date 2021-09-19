@@ -1,4 +1,4 @@
-import { WithFn } from './types';
+import { WithFn } from 'commands/azure/embeds/builder/types';
 import { capitalize } from 'lodash';
 
 export const withHeader: WithFn = (builder) => {
