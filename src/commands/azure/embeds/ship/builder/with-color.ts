@@ -14,12 +14,10 @@ const colorByStars: Record<number, ColorResolvable> = {
 
 export const withColor: WithFn = (builder) => {
   const {
-    ship: {
-      stars: { value: stars },
-    },
+    ship: { stars },
     embed,
   } = builder;
 
-  embed.setColor(colorByStars[stars]);
+  embed.setColor(colorByStars[stars as any]);
   return builder;
 };
