@@ -4,7 +4,7 @@ export default {
     ready: chalk.green('Ready!'),
     loggingIn: chalk.yellow('Logging in...'),
     loggedIn: chalk.green('Logged in!'),
-    loggingInFailed: chalk.red('Logging in Failed.'),
+    loggingInFailed: chalk.red('Logging in Failed: {{error}}'),
     startStartup: chalk.blueBright('Getting Ready.'),
     finishStartup: chalk.blueBright('Finished Startup!'),
     shutdown: chalk.red('Shutting down...'),

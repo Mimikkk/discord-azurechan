@@ -3,14 +3,14 @@ import { deblog, fpdeblog } from 'shared/utils';
 
 const login = async () => {
   deblog('notice', 'loggingIn');
-  await client.login(process.env.TOKEN);
+  await client.login(process.env.ARK_CHAN).catch(console.log);
 };
 
 export const startup = async () => {
   deblog('notice', 'startStartup');
   await login()
     .then(fpdeblog('approval', 'loggedIn'))
-    .catch(fpdeblog('error', 'loggingInFailed'));
+    .catch((error) => fpdeblog('error', 'loggingInFailed', { error }));
   deblog('notice', 'finishStartup');
 };
 

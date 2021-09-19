@@ -1,1 +1,1 @@
-export { default as AzureService } from './azure-service';
+export { service as azureService } from './azure-service';
