@@ -17,7 +17,7 @@ export const withHeader: WithFn = (builder) => {
   embed
     .setAuthor(`${hullType}-${nationality}`, chibi)
     .setThumbnail(chibi)
-    .setDescription(description)
+    .setDescription(`Obtained from: ${description}`)
     .setTitle(capitalize(title))
     .setURL(wikiUrl);
   return builder;
