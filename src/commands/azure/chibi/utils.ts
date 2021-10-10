@@ -5,7 +5,7 @@ import { Ship } from 'services/azure-service';
 export const createShipButton = (ship: Ship, index: number) =>
   new MessageButton({
     type: 'BUTTON',
-    style: 'DANGER',
+    style: index === 0 ? 'SUCCESS' : 'DANGER',
     label: capitalize(ship.names.en),
     customId: `chibi-${index}`,
   });

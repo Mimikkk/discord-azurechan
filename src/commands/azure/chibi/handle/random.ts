@@ -1,8 +1,6 @@
-import { createChibiEmbed } from 'commands/azure/embeds';
 import { CommandInteraction } from 'discord.js';
 import { randomShip } from 'services/azure-service';
+import { replyShips } from './named';
 
-export const handleRandom = async (interaction: CommandInteraction) => {
-  const { id } = randomShip();
-  await interaction.reply({ embeds: [createChibiEmbed(id)] });
-};
+export const handleRandom = async (interaction: CommandInteraction) =>
+  await interaction.reply(replyShips([randomShip()]));
