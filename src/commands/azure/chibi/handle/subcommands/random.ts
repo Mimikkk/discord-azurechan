@@ -1,6 +1,6 @@
 import { CommandInteraction } from 'discord.js';
 import { randomShip } from 'services/azure-service';
-import { replyShips } from './named';
+import { shipReply } from 'commands/azure/chibi/utils';
 
 export const handleRandom = async (interaction: CommandInteraction) =>
-  await interaction.reply(replyShips([randomShip()]));
+  await interaction.reply(shipReply(randomShip()));

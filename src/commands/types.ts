@@ -1,3 +1,3 @@
 import { AzureCommandType } from './azure';
 
-export type CommandType = AzureCommandType;
+export type InteractionType = AzureCommandType;
