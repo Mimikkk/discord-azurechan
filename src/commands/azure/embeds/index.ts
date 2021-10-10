@@ -1,1 +1,1 @@
-export { createChibiEmbed as createChibiEmbed } from 'commands/azure/embeds/ship/chibi';
+export * from './ship';

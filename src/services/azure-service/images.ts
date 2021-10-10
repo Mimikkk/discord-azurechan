@@ -4,7 +4,7 @@ const WikiUrl = 'https://azurlane.koumakan.jp';
 const getImage = (image: string) =>
   encodeURI(`${WikiUrl}/Special:Redirect/file/${image}.png`);
 
-export const createShipImage = (name: string, isKai: boolean): ShipImage => {
+export const createShipImage = (name: string, isKai?: boolean): ShipImage => {
   const kaiInfix = isKai ? 'Kai' : '';
 
   const shipImageUrl = (type: ShipImageType) =>
